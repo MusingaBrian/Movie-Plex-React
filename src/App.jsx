@@ -10,11 +10,6 @@ function App() {
       <Navbar />
       <section className='flex flex-row justify-between gap-3 flex-wrap p-5'>
         <Movie />
-        <Movie />
-        <Movie />
-        <Movie />
-        <Movie />
-        <Movie />
       </section>
       <Hero />
       <Footer/>
