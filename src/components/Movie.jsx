@@ -1,4 +1,5 @@
 import React from 'react'
+import TypeBadge from './TypeBadge'
 
 function Movie({movie}) {
   return (
@@ -13,7 +14,7 @@ function Movie({movie}) {
             <h2 className="card-title">{movie.Title}</h2>
             <p>Released In the Year {movie.Year}</p>
             <div className="card-actions justify-end">
-                <button className="btn btn-primary">{movie.Type}</button>
+              <TypeBadge type={movie.Type}/>
             </div>
         </div>
     </div>
