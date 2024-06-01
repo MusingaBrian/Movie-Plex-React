@@ -57,7 +57,6 @@ function App() {
         }
 
       </section>
-      <Hero />
       <Footer/>
     </div>
   );
