@@ -1,8 +1,8 @@
 import {useEffect, useState} from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import Hero from './components/Hero'
 import Movie from './components/Movie'
+import Error from './components/Error'
 
 //c372fe48
 const API_URL = 'http://www.omdbapi.com?apikey=c372fe48';
@@ -34,9 +34,9 @@ function App() {
 
 
   return (
-    <div className='glass max-h-full max-h-full'>
+    <div className='max-h-full max-h-full'>
       <Navbar searchTerm={searchTerm} setsearchTerm={setsearchTerm} searchMovie={searchMovie}/>
-      <section className='flex flex-row items-center gap-6 flex-wrap my-4 mx-8 pt-4'>
+      <section className='flex flex-row items-start justify-start gap-5 flex-wrap container m-auto py-8'>
 
         {
           movies?.length > 0
@@ -50,9 +50,7 @@ function App() {
 
             </>
           ) : (
-            <div className="conatiner">
-              <h1>No Movies Found!</h1>
-            </div>
+            <Error />
           )
         }
 
