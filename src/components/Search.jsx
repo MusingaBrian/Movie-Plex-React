@@ -1,6 +1,6 @@
 import React from 'react'
 
-function search() {
+function search({searchTerm, setsearchTerm, searchMovie}) {
   return (
     <div className="join">
         <div>
@@ -8,8 +8,8 @@ function search() {
                 <input 
                     className="input input-bordered join-item" 
                     placeholder="Search For A Movie"
-                    value='Tranformers'
-                    onChange={()=> {}}
+                    value={searchTerm}
+                    onChange={(e) => setsearchTerm(e.target.value)}
                 />
             </div>
         </div>
@@ -21,7 +21,7 @@ function search() {
         </select>
         <div className="indicator">
             <span className="indicator-item badge badge-secondary">new</span> 
-            <button className="btn join-item" onClick={() => {}}>Search</button>
+            <button className="btn join-item" onClick={() => searchMovie(searchTerm)}>Search</button>
         </div>
     </div>
   )

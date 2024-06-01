@@ -18,6 +18,7 @@ const movie1 = {
 function App() {
 
   const [movies, setmovies] = useState([]);
+  const [searchTerm, setsearchTerm] = useState('');
 
   const searchMovie = async (title) => {
     const response = await fetch(`${API_URL}&s=${title}`);
@@ -34,7 +35,7 @@ function App() {
 
   return (
     <div className='glass max-h-full max-h-full'>
-      <Navbar />
+      <Navbar searchTerm={searchTerm} setsearchTerm={setsearchTerm} searchMovie={searchMovie}/>
       <section className='flex flex-row items-center gap-6 flex-wrap my-4 mx-8 pt-4'>
 
         {
