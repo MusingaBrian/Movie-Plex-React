@@ -5,7 +5,11 @@ function search() {
     <div className="join">
         <div>
             <div>
-                <input className="input input-bordered join-item" placeholder="Search For A Movie"/>
+                <input 
+                    className="input input-bordered join-item" 
+                    placeholder="Search For A Movie"
+                    value='Tranform'
+                />
             </div>
         </div>
         <select className="select select-bordered join-item">
