@@ -8,7 +8,8 @@ function search() {
                 <input 
                     className="input input-bordered join-item" 
                     placeholder="Search For A Movie"
-                    value='Tranform'
+                    value='Tranformers'
+                    onChange={()=> {}}
                 />
             </div>
         </div>
@@ -20,7 +21,7 @@ function search() {
         </select>
         <div className="indicator">
             <span className="indicator-item badge badge-secondary">new</span> 
-            <button className="btn join-item">Search</button>
+            <button className="btn join-item" onClick={() => {}}>Search</button>
         </div>
     </div>
   )

@@ -1,16 +1,19 @@
 import React from 'react'
 
-function Movie() {
+function Movie({movie1}) {
   return (
     <div className="card card-side bg-base-100 shadow-xl image-full">
         <figure>
-            <img src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg" alt="Movie"/>
+            <img 
+            src={movie1.Poster !== 'N/A' ? movie1.Poster : 'https://via.placeholder.com/400'} 
+            alt={movie1.Title}
+          />
         </figure>
         <div className="card-body">
-            <h2 className="card-title">New movie is released!</h2>
-            <p>Click the button to watch on Jetflix app.</p>
+            <h2 className="card-title">{movie1.Title}</h2>
+            <p>Released In the Year {movie1.Year}</p>
             <div className="card-actions justify-end">
-                <button className="btn btn-primary">Watch</button>
+                <button className="btn btn-primary">{movie1.Type}</button>
             </div>
         </div>
     </div>
