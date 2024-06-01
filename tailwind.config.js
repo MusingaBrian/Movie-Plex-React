@@ -12,7 +12,7 @@ export default {
     daisyui,
   ],
   daisyui: {
-    themes: ["cyberpunk", "dark", "retro"],
+    themes: ["retro", "dark", ""],
     darkTheme: "dark",
   },
 }
