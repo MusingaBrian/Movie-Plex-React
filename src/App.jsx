@@ -1,8 +1,16 @@
-import React from 'react'
+import {useEffect} from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Hero from './components/Hero'
 import Movie from './components/Movie'
+
+//c372fe48
+const API_URL = 'http://www.omdbapi.com?apikey=c372fe48';
+
+useEffect(() => {
+
+}, [])
+
 
 function App() {
   return (
