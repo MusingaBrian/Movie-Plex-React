@@ -1,4 +1,4 @@
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Hero from './components/Hero'
@@ -17,31 +17,49 @@ const movie1 = {
 
 function App() {
 
-  // const searchMovie = async (title) => {
-  //   const response = await fetch(`${API_URL}&s=${title}`);
+  const [movies, setmovies] = useState([]);
 
-  //   const data = await response.json();
+  const searchMovie = async (title) => {
+    const response = await fetch(`${API_URL}&s=${title}`);
 
-  //   // console.log(data.Search);
-  // }
+    const data = await response.json();
 
-  // useEffect(() => {
-  //   searchMovie('transformers');
-  // }, []);
+    setmovies(data.Search);
+  };
+
+  useEffect(() => {
+    searchMovie('transformers');
+  }, []);
 
 
   return (
-    <div className='glass max-h-full max-h-full' data-theme='cyberpunk'>
+    <div className='glass max-h-full max-h-full'>
       <Navbar />
-      <section className='flex flex-row justify-between gap-3 flex-wrap p-5'>
-        <Movie 
-          movie1={movie1}
-        />
+      <section className='flex flex-row items-center gap-6 flex-wrap my-4 mx-8 pt-4'>
+
+        {
+          movies?.length > 0
+          ? (
+            <>
+              { movies.map((movie, key) => 
+                (
+                    <Movie key={key} movie={movie}/>
+                )
+              ) }
+
+            </>
+          ) : (
+            <div className="conatiner">
+              <h1>No Movies Found!</h1>
+            </div>
+          )
+        }
+
       </section>
       <Hero />
       <Footer/>
     </div>
-  )
+  );
 }
 
 export default App
