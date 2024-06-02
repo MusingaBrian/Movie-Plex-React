@@ -4,7 +4,7 @@ import Footer from './components/Footer'
 import Movie from './components/Movie'
 import Error from './components/Error'
 
-const apiKey = import.meta.env.VITE_OMDB_API_KEY;
+const apiKey = process.env.VITE_OMDB_API_KEY
 const API_URL = `http://www.omdbapi.com?apikey=${apiKey}`;
 function App() {
 
